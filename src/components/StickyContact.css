@@ -1,0 +1,50 @@
+.sticky-contact {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sc-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 0 12px 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: width 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.18);
+}
+
+.sc-btn:hover {
+  width: 56px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.26);
+}
+
+.sc-phone {
+  background: var(--color-accent);
+}
+
+.sc-phone:hover {
+  background: var(--color-accent-dark);
+}
+
+.sc-wa {
+  background: #25d366;
+}
+
+.sc-wa:hover {
+  background: #1aab4a;
+}
+
+@media (max-width: 480px) {
+  .sc-btn { width: 40px; height: 40px; font-size: 18px; }
+  .sc-btn:hover { width: 46px; }
+}

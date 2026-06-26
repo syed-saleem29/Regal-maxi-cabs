@@ -1,0 +1,184 @@
+/* ── Hero ── */
+.gal-hero {
+  display: flex; align-items: center;
+  background: var(--bg-0);
+}
+
+.gal-hero-inner {
+  padding: 80px 0 28px;
+  display: flex; flex-direction: column; gap: 0;
+}
+
+.gal-chip-right { align-self: flex-end; margin-top: 4px; margin-bottom: 14px; }
+
+.gal-hero-inner h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 900; color: var(--color-text); margin: 0;
+}
+
+.gal-accent { color: var(--color-accent); }
+
+.gal-hero-inner p {
+  font-size: 16px; color: var(--color-text-2);
+  max-width: 480px; margin: 0;
+}
+
+/* ── Section ── */
+.gal-section { padding: 60px 0 100px; background: var(--bg-0); }
+
+/* ── Empty state ── */
+.gal-empty {
+  text-align: center; padding: 80px 20px;
+  color: var(--color-text-2); font-size: 15px;
+}
+
+.gal-empty code {
+  background: var(--bg-3); border-radius: 6px;
+  padding: 2px 8px; font-size: 13px;
+}
+
+/* ════════════════════════════
+   FEATURED SLIDER
+════════════════════════════ */
+.gal-slider {
+  position: relative;
+  width: 95vw;
+  margin: 0 auto 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 90vh;
+  background: #0a0d18;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Sliding track — explicit 100% width means translateX(-N*100%) moves by exactly N slides */
+.gal-slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.77, 0, 0.18, 1);
+  will-change: transform;
+  cursor: pointer;
+}
+
+.gal-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gal-slide img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/* Arrows */
+.gal-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff; font-size: 22px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 2;
+  transition: background 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(6px);
+}
+
+.gal-arrow:hover { background: var(--color-accent); transform: translateY(-50%) scale(1.08); }
+.gal-arrow--left  { left: 16px; }
+.gal-arrow--right { right: 16px; }
+
+
+/* ════════════════════════════
+   FULL GRID
+════════════════════════════ */
+.gal-grid {
+  columns: 4;
+  column-gap: 12px;
+}
+
+.gal-item {
+  position: relative;
+  border-radius: 12px; overflow: hidden;
+  margin-bottom: 12px;
+  break-inside: avoid;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+}
+
+.gal-item img {
+  width: 100%; display: block;
+  transition: transform 0.4s ease;
+}
+
+.gal-item:hover img { transform: scale(1.05); }
+
+
+/* ════════════════════════════
+   LIGHTBOX
+════════════════════════════ */
+.gal-lightbox {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.92);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+
+.gal-lb-inner {
+  position: relative;
+  max-width: 1000px; width: 100%;
+}
+
+.gal-lb-inner img {
+  width: 100%; display: block;
+  border-radius: 14px;
+  object-fit: contain; max-height: 82vh;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7);
+}
+
+.gal-lb-close {
+  position: absolute; top: -16px; right: -16px;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+  color: #fff; font-size: 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+  z-index: 1;
+}
+
+.gal-lb-close:hover { background: rgba(255,255,255,0.25); }
+
+.gal-lb-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+  color: #fff; font-size: 22px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.gal-lb-arrow:hover { background: var(--color-accent); }
+.gal-lb-arrow--left  { left: -64px; }
+.gal-lb-arrow--right { right: -64px; }
+
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .gal-grid { columns: 3; }
+}
+
+@media (max-width: 700px) {
+  .gal-slider { height: 55vh; width: 100vw; border-radius: 0; }
+  .gal-grid { columns: 2; column-gap: 8px; }
+  .gal-item  { margin-bottom: 8px; }
+  .gal-arrow { width: 38px; height: 38px; font-size: 18px; }
+  .gal-lb-arrow--left  { left: 4px; }
+  .gal-lb-arrow--right { right: 4px; }
+}
+
+@media (max-width: 420px) {
+  .gal-grid { columns: 1; }
+}

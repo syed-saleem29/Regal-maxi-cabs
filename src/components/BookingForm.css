@@ -1,0 +1,259 @@
+.booking-form { width: 100%; }
+
+.bf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+.bf-full { grid-column: 1 / -1; }
+
+.req { color: var(--color-accent); margin-left: 2px; }
+
+.fl-icon { font-size: 13px; margin-right: 2px; }
+.fl-icon.accent { color: var(--color-accent); }
+.fl-icon.gold { color: var(--color-gold); }
+
+/* Phone field */
+.phone-wrap {
+  display: flex; align-items: stretch;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.phone-wrap:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0,158,115,0.12);
+}
+.phone-prefix {
+  padding: 13px 14px;
+  background: var(--bg-3);
+  color: var(--color-text-2);
+  font-size: 14px; font-weight: 600;
+  border-right: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+.phone-input {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  flex: 1;
+}
+
+/* Trip type radio */
+.trip-type-row {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  padding: 4px 0;
+}
+.trip-option {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--bg-2);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer; font-size: 14px; font-weight: 500;
+  color: var(--color-text-2);
+  transition: var(--transition);
+  user-select: none;
+}
+.trip-option input[type="radio"] { display: none; }
+.trip-option.selected {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-dim);
+  font-weight: 700;
+}
+
+/* Error */
+.bf-error {
+  background: rgba(255,50,50,0.08);
+  border: 1px solid rgba(255,50,50,0.25);
+  color: #ff6b6b;
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+/* Submit */
+.bf-submit {
+  width: 100%; padding: 16px;
+  font-size: 14px; justify-content: center;
+  gap: 10px;
+}
+.bf-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Success */
+.bf-success {
+  text-align: center; padding: 60px 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 18px;
+}
+.bf-success-icon { font-size: 56px; color: var(--color-accent); }
+.bf-success h3 { font-size: 24px; font-weight: 800; color: var(--color-white); }
+.bf-success p { font-size: 15px; color: var(--color-text-2); max-width: 380px; line-height: 1.7; }
+
+/* Compact variant */
+.booking-form.compact .bf-grid { grid-template-columns: 1fr; gap: 14px; }
+.booking-form.compact .bf-full { grid-column: 1; }
+
+/* ── Date / Time picker wrapper ── */
+.dp-wrap { position: relative; }
+.dp-wrapper { width: 100% !important; display: block !important; }
+.dp-input { width: 100% !important; cursor: pointer !important; }
+
+/* Popper z-index */
+.rmc-popper { z-index: 9999 !important; }
+
+/* ── Calendar shell ── */
+.rmc-calendar.react-datepicker {
+  font-family: 'Montserrat', sans-serif !important;
+  border: 1.5px solid var(--color-border) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18) !important;
+  background: #ffffff !important;
+  min-width: 290px !important;
+}
+
+/* Header bar */
+.rmc-calendar .react-datepicker__header {
+  background: linear-gradient(135deg, #009e73, #00c48c) !important;
+  border-bottom: none !important;
+  padding: 16px 16px 12px !important;
+  border-radius: 0 !important;
+}
+.rmc-calendar .react-datepicker__current-month {
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+}
+.rmc-calendar .react-datepicker__day-names { margin-top: 10px !important; }
+.rmc-calendar .react-datepicker__day-name {
+  color: rgba(255,255,255,0.8) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  width: 36px !important;
+  line-height: 28px !important;
+}
+
+/* Navigation arrows */
+.rmc-calendar .react-datepicker__navigation {
+  top: 14px !important;
+}
+.rmc-calendar .react-datepicker__navigation-icon::before {
+  border-color: rgba(255,255,255,0.9) !important;
+  border-width: 2px 2px 0 0 !important;
+  width: 9px !important; height: 9px !important;
+}
+.rmc-calendar .react-datepicker__navigation:hover .react-datepicker__navigation-icon::before {
+  border-color: #ffffff !important;
+}
+
+/* Days */
+.rmc-calendar .react-datepicker__month { margin: 12px 10px !important; }
+.rmc-calendar .react-datepicker__day {
+  width: 36px !important;
+  line-height: 36px !important;
+  margin: 2px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #1a1a2e !important;
+  transition: background 0.15s ease, color 0.15s ease !important;
+}
+.rmc-calendar .react-datepicker__day:hover {
+  background: rgba(0,158,115,0.12) !important;
+  color: #009e73 !important;
+}
+.rmc-calendar .react-datepicker__day--selected,
+.rmc-calendar .react-datepicker__day--keyboard-selected {
+  background: #009e73 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(0,158,115,0.4) !important;
+}
+.rmc-calendar .react-datepicker__day--today {
+  background: transparent !important;
+  font-weight: 700 !important;
+  border: 2px solid #009e73 !important;
+  color: #009e73 !important;
+}
+.rmc-calendar .react-datepicker__day--today.react-datepicker__day--selected {
+  background: #009e73 !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+}
+.rmc-calendar .react-datepicker__day--disabled {
+  color: #ccc !important;
+  cursor: not-allowed !important;
+}
+.rmc-calendar .react-datepicker__day--disabled:hover {
+  background: transparent !important;
+  color: #ccc !important;
+}
+
+/* ── Time-only picker ── */
+.rmc-time-only.react-datepicker {
+  min-width: 140px !important;
+  width: 140px !important;
+}
+.rmc-time-only .react-datepicker__header--time {
+  background: linear-gradient(135deg, #009e73, #00c48c) !important;
+  padding: 14px 10px !important;
+  border-radius: 0 !important;
+  border-bottom: none !important;
+}
+.rmc-time-only .react-datepicker__header--time .react-datepicker-time__header {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  display: none;
+}
+.rmc-time-only .react-datepicker__time-container { width: 140px !important; border: none !important; }
+.rmc-time-only .react-datepicker__time { border-radius: 0 !important; }
+.rmc-time-only .react-datepicker__time-box { width: 140px !important; }
+.rmc-time-only .react-datepicker__time-list {
+  height: 220px !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(0,158,115,0.3) transparent !important;
+}
+.rmc-time-only .react-datepicker__time-list::-webkit-scrollbar { width: 4px; }
+.rmc-time-only .react-datepicker__time-list::-webkit-scrollbar-thumb {
+  background: rgba(0,158,115,0.3); border-radius: 4px;
+}
+.rmc-time-only .react-datepicker__time-list-item {
+  height: 38px !important;
+  line-height: 38px !important;
+  padding: 0 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #1a1a2e !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: background 0.12s ease !important;
+  border-radius: 6px !important;
+  margin: 1px 4px !important;
+}
+.rmc-time-only .react-datepicker__time-list-item:hover {
+  background: rgba(0,158,115,0.1) !important;
+  color: #009e73 !important;
+}
+.rmc-time-only .react-datepicker__time-list-item--selected {
+  background: #009e73 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+.rmc-time-only .react-datepicker__time-list-item--disabled {
+  color: #c8c8c8 !important;
+  background: transparent !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 640px) {
+  .bf-grid { grid-template-columns: 1fr; }
+  .bf-full { grid-column: 1; }
+}

@@ -1,0 +1,117 @@
+.booking-widget {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px 32px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+  width: 100%;
+  max-width: 520px;
+}
+
+.bw-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.bw-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-dark);
+}
+.bw-badge {
+  background: rgba(0,238,171,0.12);
+  color: var(--color-accent-dark);
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,238,171,0.3);
+}
+
+.bw-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.bw-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.bw-field label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bw-icon { font-size: 14px; color: var(--color-text-muted); }
+.bw-icon.accent { color: var(--color-accent-dark); }
+.bw-icon.gold { color: var(--color-gold); }
+
+.bw-field input,
+.bw-field select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--color-gray);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-dark);
+  background: var(--color-white);
+  transition: var(--transition);
+  outline: none;
+  appearance: auto;
+}
+.bw-field input:focus,
+.bw-field select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0,238,171,0.15);
+}
+.bw-field input::placeholder { color: #bbb; }
+
+.bw-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.bw-submit {
+  width: 100%;
+  padding: 15px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+.bw-submit:hover {
+  background: var(--color-accent);
+  color: var(--color-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0,238,171,0.35);
+}
+
+@media (max-width: 480px) {
+  .booking-widget { padding: 20px; }
+  .bw-row { grid-template-columns: 1fr; }
+}

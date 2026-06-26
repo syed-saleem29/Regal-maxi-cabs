@@ -1,0 +1,154 @@
+/* ── Hero ── */
+.policy-hero {
+  background: var(--bg-0);
+}
+
+.policy-hero-inner {
+  padding: 110px 0 40px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.policy-hero-inner h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: 900; color: var(--color-text); margin: 0;
+}
+
+.policy-accent { color: var(--color-accent); }
+
+.policy-hero-inner p {
+  font-size: 13px; color: var(--color-text-3); margin: 0;
+}
+
+/* ── Section ── */
+.policy-section {
+  padding: 48px 0 100px;
+  background: var(--bg-0);
+}
+
+.policy-body {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex; flex-direction: column; gap: 48px;
+}
+
+/* ── Block ── */
+.policy-block h2 {
+  font-family: var(--font-heading);
+  font-size: 20px; font-weight: 800;
+  color: var(--color-white);
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.policy-block p {
+  font-size: 15px; line-height: 1.8;
+  color: var(--color-text-2);
+  margin: 0 0 14px;
+}
+
+.policy-block p:last-child { margin-bottom: 0; }
+
+.policy-block ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.policy-block li {
+  font-size: 15px; line-height: 1.7;
+  color: var(--color-text-2);
+}
+
+.policy-block a {
+  color: var(--color-accent); text-decoration: none;
+}
+
+.policy-block a:hover { text-decoration: underline; }
+
+/* ── Table ── */
+.policy-table-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  margin-top: 14px;
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.policy-table thead tr {
+  background: #0f1422;
+}
+
+.policy-table th {
+  font-family: var(--font-heading);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  padding: 14px 18px;
+  text-align: left;
+}
+
+.policy-table td {
+  padding: 14px 18px;
+  color: var(--color-text-2);
+  border-top: 1px solid var(--color-border);
+}
+
+.policy-table tbody tr:nth-child(even) {
+  background: var(--bg-1);
+}
+
+.policy-table--no-refund td {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+/* ── CTA ── */
+.policy-cta {
+  padding: 36px 40px;
+  border-radius: 20px;
+  background: #0f1422;
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center;
+  gap: 20px; flex-wrap: wrap;
+}
+
+.policy-cta p {
+  flex: 1;
+  font-family: var(--font-heading);
+  font-size: 18px; font-weight: 800;
+  color: #fff; margin: 0;
+}
+
+.policy-cta-btns {
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+
+.policy-cta-btns .btn-accent {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.policy-cta-btns .btn-outline {
+  color: #fff;
+  border-color: rgba(255,255,255,0.35);
+}
+
+.policy-cta-btns .btn-outline:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(0,158,115,0.12);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .policy-body { max-width: 100%; }
+  .policy-cta { flex-direction: column; align-items: flex-start; padding: 24px 20px; }
+  .policy-hero-inner { padding: 90px 0 32px; }
+}
