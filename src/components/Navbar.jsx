@@ -82,7 +82,7 @@ export default function Navbar() {
             </div>
 
             <Link to="/gallery" className="nav-link">Gallery</Link>
-            {/* <Link to="/blog" className="nav-link">Blog</Link> */}
+            <Link to="/blog" className="nav-link">Blog</Link>
             <Link to="/contact" className="nav-link">Contact Us</Link>
           </nav>
 

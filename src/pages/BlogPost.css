@@ -1,3 +1,26 @@
+/* ── Logo overlay ── */
+.blog-logo-bar {
+  position: absolute;
+  top: 12px; left: 14px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.blog-logo {
+  display: block;
+  height: clamp(44px, 5vw, 68px);
+  width: auto;
+  filter: drop-shadow(0 1px 6px rgba(0,0,0,0.95)) drop-shadow(0 0 3px rgba(0,0,0,0.7));
+}
+
+.blog-logo-bar--hero {
+  top: 20px; left: 24px;
+}
+
+.blog-logo-bar--hero .blog-logo {
+  height: clamp(62px, 7vw, 96px);
+}
+
 /* ── Hero ── */
 .bp-hero {
   position: relative;
@@ -170,20 +193,12 @@
   position: relative; height: 180px; overflow: hidden;
 }
 
-.bp-more-img img {
+.bp-more-img > img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 0.4s ease;
 }
 
-.bp-more-card:hover .bp-more-img img { transform: scale(1.05); }
-
-.bp-more-cat {
-  position: absolute; top: 10px; left: 10px;
-  font-family: var(--font-heading); font-size: 9px; font-weight: 700;
-  letter-spacing: 1.5px; text-transform: uppercase;
-  color: #fff; background: var(--color-accent);
-  border-radius: 100px; padding: 4px 10px;
-}
+.bp-more-card:hover .bp-more-img > img { transform: scale(1.05); }
 
 .bp-more-content {
   padding: 18px 18px 20px;

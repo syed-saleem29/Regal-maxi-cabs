@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { FiArrowLeft, FiCalendar, FiClock } from 'react-icons/fi'
 import SEO from '../components/SEO'
 import posts from '../data/blogPosts'
+import logo from '../assets/main-logo.webp'
 import './BlogPost.css'
 
 function renderBlock(block, i) {
@@ -49,8 +50,10 @@ export default function BlogPost() {
       {/* Hero */}
       <div className="bp-hero" style={{ backgroundImage: `url(${post.img})` }}>
         <div className="bp-hero-overlay" />
+        <div className="blog-logo-bar blog-logo-bar--hero">
+          <img src={logo} alt="Regal Maxi Cabs" className="blog-logo" />
+        </div>
         <div className="container bp-hero-inner">
-          <span className="chip">{post.cat}</span>
           <h1>{post.title}</h1>
           <div className="bp-meta">
             <span><FiCalendar /> {post.date}</span>
@@ -83,16 +86,18 @@ export default function BlogPost() {
           <h2 className="bp-more-heading">More Articles</h2>
           <div className="bp-more-grid">
             {posts.filter(p => p.slug !== slug).slice(0, 3).map(p => (
-              <Link key={p.slug} to={`/blog/${p.slug}`} className="bp-more-card">
+              <a key={p.slug} href={`/blog/${p.slug}`} className="bp-more-card" target="_blank" rel="noopener noreferrer">
                 <div className="bp-more-img">
                   <img src={p.img} alt={p.title} loading="lazy" />
-                  <span className="bp-more-cat">{p.cat}</span>
+                  <div className="blog-logo-bar">
+                    <img src={logo} alt="Regal Maxi Cabs" className="blog-logo" />
+                  </div>
                 </div>
                 <div className="bp-more-content">
                   <h3>{p.title}</h3>
                   <span className="bp-more-meta"><FiCalendar /> {p.date}</span>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

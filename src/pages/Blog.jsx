@@ -3,6 +3,7 @@ import { FiArrowRight, FiCalendar, FiClock } from 'react-icons/fi'
 import SEO from '../components/SEO'
 import posts from '../data/blogPosts'
 import imgHero from '../assets/services/maxi cab in traffic.webp'
+import logo from '../assets/main-logo.webp'
 import './Blog.css'
 
 export default function Blog() {
@@ -30,10 +31,12 @@ export default function Blog() {
         <div className="container">
 
           {/* Featured post */}
-          <Link to={`/blog/${featured.slug}`} className="blog-featured">
+          <a href={`/blog/${featured.slug}`} className="blog-featured" target="_blank" rel="noopener noreferrer">
             <div className="bf-img">
               <img src={featured.img} alt={featured.title} />
-              <span className="bf-cat">{featured.cat}</span>
+              <div className="blog-logo-bar">
+                <img src={logo} alt="Regal Maxi Cabs" className="blog-logo" />
+              </div>
             </div>
             <div className="bf-content">
               <div className="bf-meta">
@@ -44,15 +47,17 @@ export default function Blog() {
               <p className="bf-excerpt">{featured.excerpt}</p>
               <span className="bf-cta">Read Article <FiArrowRight /></span>
             </div>
-          </Link>
+          </a>
 
           {/* Post grid */}
           <div className="blog-grid">
             {rest.map((post) => (
-              <Link key={post.slug} to={`/blog/${post.slug}`} className="blog-card">
+              <a key={post.slug} href={`/blog/${post.slug}`} className="blog-card" target="_blank" rel="noopener noreferrer">
                 <div className="bc-img">
                   <img src={post.img} alt={post.title} loading="lazy" />
-                  <span className="bc-cat">{post.cat}</span>
+                  <div className="blog-logo-bar">
+                    <img src={logo} alt="Regal Maxi Cabs" className="blog-logo" />
+                  </div>
                 </div>
                 <div className="bc-content">
                   <div className="bc-meta">
@@ -63,7 +68,7 @@ export default function Blog() {
                   <p className="bc-excerpt">{post.excerpt}</p>
                   <span className="bc-link">Read More <FiArrowRight /></span>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
 

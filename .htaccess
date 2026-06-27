@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# 1. If the exact file exists inside dist/, serve it directly (JS, CSS, images, etc.)
+RewriteCond %{DOCUMENT_ROOT}/dist%{REQUEST_URI} -f
+RewriteRule ^ dist%{REQUEST_URI} [L]
+
+# 2. Everything else (React Router paths) → serve dist/index.html
+RewriteRule ^ dist/index.html [L]

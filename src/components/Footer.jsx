@@ -45,6 +45,8 @@ export default function Footer() {
           <ul className="footer-list">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/airport-transfer">Airport Transfer</Link></li>
+            <li><Link to="/gallery">Gallery</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/book">Book a Ride</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
           </ul>
