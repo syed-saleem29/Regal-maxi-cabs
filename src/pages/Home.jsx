@@ -227,7 +227,7 @@ export default function Home() {
         <div className="container promo-inner">
           <div className="promo-badge">LIMITED OFFER</div>
           <div className="promo-text">
-            <strong>15% OFF</strong> your first ride with Regal Maxi Cabs
+            <strong>15% OFF</strong> on your first ride with Regal Maxi Cabs
           </div>
           {/* <div className="promo-sub">Use code <span className="promo-code">REGAL15</span> at checkout &mdash; no min. spend required</div> */}
           <Link to="/book" className="btn-gold promo-cta">Claim Offer <FiArrowRight /></Link>
